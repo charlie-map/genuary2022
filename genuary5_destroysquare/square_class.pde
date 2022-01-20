@@ -47,10 +47,13 @@ class Square {
 
       curr_child_len = 4;
       for (int set_children_squares = 0; set_children_squares < curr_child_len; set_children_squares++) {
-        new_square[set_children_squares] = new Square(x + size * 0.1 * square_direction[set_children_squares][0],
-                                                      square_direction[set_children_squares][0] * random(0.2, 0.8),
-                                                      y + size * 0.1 * square_direction[set_children_squares][1],
-                                                      square_direction[set_children_squares][1] * random(0.2, 0.8),
+        float rand_x_dir = square_direction[set_children_squares][0] * random(0.2, 0.8);
+        float rand_y_dir = square_direction[set_children_squares][1] * random(0.2, 0.8);
+        
+        new_square[set_children_squares] = new Square(x + size * square_direction[set_children_squares][0] * 0.3,
+                                                      rand_x_dir,
+                                                      y + size * square_direction[set_children_squares][1] * 0.3,
+                                                      rand_y_dir,
                                                       col, size * 0.5, TIME_BOMB);
       }
       
